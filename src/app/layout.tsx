@@ -58,7 +58,7 @@ export default function RootLayout({
               <div className='h-full w-full flex flex-col items-center gap-4'>
                 <Icons.Sparkles className='h-16 w-16' />
                 <p className='max-w-xl text-center text-lg text-slate-700'>
-                  Search for Jackets here...
+                  Search for &apos;Jacket&apos; here...
                 </p>
 
                 <div className='mx-auto mt-16 w-full max-w-2xl flex flex-col'>
