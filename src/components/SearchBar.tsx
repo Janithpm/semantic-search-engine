@@ -5,8 +5,9 @@ import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { useRef, useState, useTransition } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 
-const SearchBar = () => {
+const SearchBarContent = () => {
   const searchParams = useSearchParams()
   const defaultQuery = searchParams.get("query") || ''
   const inputRef = useRef<HTMLInputElement>(null)
@@ -49,6 +50,14 @@ const SearchBar = () => {
         </Button>
       </div>
     </div>
+  )
+}
+
+const SearchBar = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SearchBarContent />
+    </Suspense>
   )
 }
 
